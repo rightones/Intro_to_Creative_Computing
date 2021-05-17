@@ -29,7 +29,7 @@ class System {
   render() {
     this.stack.forEach((mouseV, index) => {
       this.origins.forEach((originV) => {
-        const [rv1, rv2] = calculateBezier(200, originV, mouseV);
+        const [rv1, rv2] = calculateBezier(100, originV, mouseV);
         noFill();
         const v = color(255);
         v.setAlpha(map(Math.pow(index+1, 7), 1, Math.pow(this.stack.length, 7), 1, 150));
@@ -44,6 +44,7 @@ let instance;
 
 function setup() {
   createCanvas(windowHeight, windowHeight);
+  framaRate(30);
   instance = new System();
   instance.init();
 }
@@ -53,7 +54,7 @@ function draw() {
   instance.render();
   if(mouseIsPressed){
     instance.push();
-    if(instance.stack.length>50) {
+    if(instance.stack.length>100) {
       instance.stack.shift();
     }
   }
