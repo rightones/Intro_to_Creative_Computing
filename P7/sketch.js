@@ -43,7 +43,7 @@ class System {
 let instance;
 
 function setup() {
-  createCanvas(windowHeight, windowHeight);
+  createCanvas(windowHeight, windowHeight*4/3);
   framaRate(30);
   instance = new System();
   instance.init();
