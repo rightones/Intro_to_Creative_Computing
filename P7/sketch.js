@@ -44,7 +44,7 @@ let instance;
 
 function setup() {
   createCanvas(windowHeight, windowHeight*4/3);
-  framRate(30);
+  frameRate(30);
   instance = new System();
   instance.init();
 }
